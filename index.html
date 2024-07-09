@@ -29,11 +29,14 @@
         }
         .btn-container img{
               height: 40px;
+              cursor: pointer;
         }
         button{
             display: block;
             margin: 2px auto;
             padding: 7px 10px;
+            cursor: pointer;
+            border-radius: 15px;
         }
 
     </style>
@@ -42,14 +45,36 @@
     <div class="main-container">
         <img src="imagenothing1.webp" class="main-image"/>
         <div class="btn-container">
-                <img src="minus.png"/>
-                <p>
+                <img src="minus.png" onclick="handlequalitychange('dec')"/>
+                <p id="result-text">
                     1
                 </p>
-                <img src="plus.png"/>
+                <img src="plus.png" onclick="handlequalitychange('inc')"/>
         </div>
         <button>BUY NOW</button>
-    </div>
+    </div> 
+    <script>
+        function handlequalitychange(action){
+             let ResultElement=document.getElementById("result-text")
+             let quantity=parseInt(ResultElement.innerText);
+             if(quantity ==1 && action=="dec"){
+                alert("Quantity Cannot less than 1")
+                return
+             }
+             else if(quantity==5 && action=="inc" ){
+                alert("Quantity cannot be greater than 5")
+                return
+             }
+
+               ResultElement.innerText = action=="dec" ?  --quantity : ++quantity 
+                // if(action == "inc"){
+                //     ResultElement.innerText= ++quantity;
+                // }
+                // else{
+                //     ResultElement.innerText= --quantity;
+                // }
+        }
+    </script>
     
 </body>
 </html>
