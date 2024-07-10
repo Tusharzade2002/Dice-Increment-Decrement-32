@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller</title>
     <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .text{
           text-align: center;
           
@@ -12,13 +20,13 @@
         .main-img{
             height: 300px;
             display: block;
-            margin: 70px auto;
+            margin: 40px auto;
         }
         .btn-roll{
             height: 40px;
             width: 100px;
             display: block;
-            margin: 30px auto;
+            margin: 20px auto;
             border-radius: 5px;
             border: none;
             background-color: aquamarine;
@@ -26,12 +34,23 @@
             font-size: larger;
             cursor: pointer;
         }
+        .container{
+             background-color: blueviolet;
+             padding: 10px;
+             height: 40%;
+             width: 50%;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1 class="text">Dice Roller</h1>
-    <img src="dice-cube-outline.png" class="main-img" id="main-img"/>
-    <button class="btn-roll" onclick="Roll()">Roll</button>
+   
+    <div class="container">
+        <h1 class="text">Dice Roller</h1>
+      <img src="dice-cube-outline.png" class="main-img" id="main-img"/>
+      <button class="btn-roll" onclick="Roll()">Roll</button>
+    </div> 
     <script>
         function Roll(){
             let randomNumber=Math.floor(Math.random()*7);
